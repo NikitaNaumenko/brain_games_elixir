@@ -1,6 +1,5 @@
 # BrainGames
-
-**TODO: Add description**
+[![Maintainability](https://api.codeclimate.com/v1/badges/1cc5b8bd28953e286fa3/maintainability)](https://codeclimate.com/github/NikitaNaumenko/brain_games_elixir/maintainability)
 
 ## Installation
 
