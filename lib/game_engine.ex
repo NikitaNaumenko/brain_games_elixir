@@ -4,14 +4,30 @@ defmodule BrainGames.GameEngine do
   @games %{ "1" => Even }
   @rounds_count 3
 
-  def play(game_number) do
-    IO.inspect game_number
-    game_name = @games[game_number]
-    IO.inspect game_name
-    game_name.play()
-    # game = String.to_existing_atom("Elixir." <> "BrainGames.Games." <> game_name)
-    # play_round(game)
+  def play(game_number, user) do
+    game = @games[game_number]
+    play_round(game, user, @rounds_count)
   end
 
-  # def play_round(game) 
+  def play_round(game, user, rounds_count) when rounds_count > 0 do
+    game_data = game.generate_game_data()
+    task = game.get_task()
+    question = game_data["question"]
+    answer = game_data["answer"]
+
+    IO.puts task
+    IO.puts "Question: #{question}"
+    user_answer = IO.gets("Your answer? \n")
+
+
+    if answer != user_answer do
+      IO.puts "#{user_answer} is wrong answer ;( Correct answer was #{answer}\n"
+      IO.puts "Let's try again #{user}\n"
+    else
+      IO.puts "Correct!\n"
+      play_round(game, user, rounds_count - 1)
+    end
+  end
+
+  def play_round(_, user, _), do: IO.puts "Congratulations, #{user}\n"
 end

@@ -11,6 +11,6 @@ defmodule BrainGames.CLI do
     """
 
     game_number = IO.getn "Enter game number >"
-    GameEngine.play(game_number)
+    GameEngine.play(game_number, name)
   end
 end
