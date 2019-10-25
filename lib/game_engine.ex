@@ -17,7 +17,7 @@ defmodule BrainGames.GameEngine do
 
     IO.puts task
     IO.puts "Question: #{question}"
-    user_answer = IO.gets("Your answer? \n")
+    user_answer = ExPrompt.string("Your answer? \n")
 
 
     if answer != user_answer do

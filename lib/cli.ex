@@ -3,14 +3,14 @@ defmodule BrainGames.CLI do
 
   def main(_args) do
     IO.puts "Welcome to the Brain Games!\n"
-    name = IO.gets "May I have your name?"
+    name = ExPrompt.string("May I have your name?")
     IO.puts "Hello, #{name}"
     IO.puts """
       Choose a game:
     1) Brain-even
     """
 
-    game_number = IO.getn "Enter game number >"
+    game_number = ExPrompt.string("Enter game number >")
     GameEngine.play(game_number, name)
   end
 end
