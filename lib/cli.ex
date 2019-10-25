@@ -8,6 +8,7 @@ defmodule BrainGames.CLI do
     IO.puts """
       Choose a game:
     1) Brain-even
+    1) Brain-calc
     """
 
     game_number = ExPrompt.string("Enter game number >")
