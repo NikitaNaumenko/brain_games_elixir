@@ -6,7 +6,7 @@ defmodule BrainGames.Games.Gcd do
     second = Enum.random(0..100)
     question = "#{first} #{second}"
     answer = find_gcd(first, second)
-    %{ "question" => question, "answer" => Integer.to_string(answer) }
+    %{"question" => question, "answer" => Integer.to_string(answer)}
   end
 
   def get_task do
@@ -14,6 +14,7 @@ defmodule BrainGames.Games.Gcd do
   end
 
   defp find_gcd(a, b) when b == 0, do: a
+
   defp find_gcd(a, b) do
     find_gcd(b, rem(a, b))
   end

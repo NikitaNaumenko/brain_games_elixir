@@ -1,5 +1,5 @@
 defmodule BrainGames do
   def hello do
-    IO.puts "hello world"
+    IO.puts("hello world")
   end
 end

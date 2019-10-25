@@ -10,7 +10,7 @@ defmodule BrainGames.Games.Progression do
     hidden_index = Enum.find_index(progression, fn x -> x == answer end)
     question = List.replace_at(progression, hidden_index, "..")
 
-    %{ "question" => Enum.join(question, " "), "answer" => Integer.to_string(answer) }
+    %{"question" => Enum.join(question, " "), "answer" => Integer.to_string(answer)}
   end
 
   def get_task do
@@ -18,10 +18,13 @@ defmodule BrainGames.Games.Progression do
   end
 
   defp get_progression(first_item, step), do: get_progression(first_item, step, 0, [])
+
   defp get_progression(first_item, step, counter, _) do
     get_progression(step, counter + 1, [first_item + step])
   end
+
   defp get_progression(_step, counter, acc) when counter == @length, do: Enum.reverse(acc)
+
   defp get_progression(step, counter, [head | _] = acc) do
     get_progression(step, counter + 1, [head + step | acc])
   end

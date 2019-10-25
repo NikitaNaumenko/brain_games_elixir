@@ -15,7 +15,7 @@ defmodule BrainGames.Games.Calc do
         "*" -> first * second
       end
 
-    %{ "question" => "#{first} #{operator} #{second}", "answer" => Integer.to_string(answer) }
+    %{"question" => "#{first} #{operator} #{second}", "answer" => Integer.to_string(answer)}
   end
 
   def get_task do
