@@ -1,7 +1,7 @@
 defmodule BrainGames.GameEngine do
-  alias BrainGames.Games.{Even, Calc}
+  alias BrainGames.Games.{Even, Calc, Gcd}
 
-  @games %{ "1" => Even, "2" => Calc }
+  @games %{ "1" => Even, "2" => Calc, "3" => Gcd }
   @rounds_count 3
 
   def play(game_number, user) do
