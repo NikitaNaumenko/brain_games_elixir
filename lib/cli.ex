@@ -11,6 +11,7 @@ defmodule BrainGames.CLI do
     2) Brain-calc
     3) Brain-greatest-common-divisor
     4) Brain-progression
+    5) Brain-prime
     """
 
     game_number = ExPrompt.string("Enter game number >")
