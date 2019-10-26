@@ -2,6 +2,7 @@ defmodule BrainGames.Games.Progression do
   require Integer
   @length 10
 
+  @spec generate_game_data() :: Map.t()
   def generate_game_data do
     first_item = Enum.random(0..100)
     step = Enum.random(0..100)
@@ -13,6 +14,7 @@ defmodule BrainGames.Games.Progression do
     %{"question" => Enum.join(question, " "), "answer" => Integer.to_string(answer)}
   end
 
+  @spec get_task() :: String.t()
   def get_task do
     "What number is missing in the progression?"
   end

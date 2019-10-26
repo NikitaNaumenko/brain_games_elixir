@@ -1,6 +1,7 @@
 defmodule BrainGames.Games.Gcd do
   require Integer
 
+  @spec generate_game_data() :: Map.t()
   def generate_game_data do
     first = Enum.random(0..100)
     second = Enum.random(0..100)
@@ -9,6 +10,7 @@ defmodule BrainGames.Games.Gcd do
     %{"question" => question, "answer" => Integer.to_string(answer)}
   end
 
+  @spec get_task() :: String.t()
   def get_task do
     "Find the greatest common divisor of given numbers."
   end
