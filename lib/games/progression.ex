@@ -2,7 +2,7 @@ defmodule BrainGames.Games.Progression do
   require Integer
   @length 10
 
-  @spec generate_game_data() :: Map.t()
+  @spec generate_game_data() :: map()
   def generate_game_data do
     first_item = Enum.random(0..100)
     step = Enum.random(0..100)
@@ -19,13 +19,17 @@ defmodule BrainGames.Games.Progression do
     "What number is missing in the progression?"
   end
 
+  @spec get_progression(first_item :: integer(), step :: integer()) :: [integer()]
   defp get_progression(first_item, step), do: get_progression(first_item, step, 0, [])
 
+  @spec get_progression(first_item :: integer(), step :: integer(), counter :: integer(), any()) ::
+          [integer()]
   defp get_progression(first_item, step, counter, _) do
     get_progression(step, counter + 1, [first_item + step])
   end
 
-  defp get_progression(_step, counter, acc) when counter == @length, do: Enum.reverse(acc)
+  @spec get_progression(integer(), counter :: integer(), acc :: [integer()]) :: [integer()]
+  defp get_progression(_, counter, acc) when counter == @length, do: Enum.reverse(acc)
 
   defp get_progression(step, counter, [head | _] = acc) do
     get_progression(step, counter + 1, [head + step | acc])

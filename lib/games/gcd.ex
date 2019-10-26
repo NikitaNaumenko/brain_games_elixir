@@ -1,7 +1,7 @@
 defmodule BrainGames.Games.Gcd do
   require Integer
 
-  @spec generate_game_data() :: Map.t()
+  @spec generate_game_data() :: map()
   def generate_game_data do
     first = Enum.random(0..100)
     second = Enum.random(0..100)
@@ -15,6 +15,7 @@ defmodule BrainGames.Games.Gcd do
     "Find the greatest common divisor of given numbers."
   end
 
+  @spec find_gcd(a :: integer(), b :: integer()) :: integer()
   defp find_gcd(a, b) when b == 0, do: a
 
   defp find_gcd(a, b) do

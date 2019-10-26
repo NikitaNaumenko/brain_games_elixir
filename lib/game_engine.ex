@@ -4,11 +4,13 @@ defmodule BrainGames.GameEngine do
   @games %{"1" => Even, "2" => Calc, "3" => Gcd, "4" => Progression, "5" => Prime}
   @rounds_count 3
 
+  @spec play(game_number :: String.t(), user :: String.t()) :: :ok
   def play(game_number, user) do
     game = @games[game_number]
     play_round(game, user, @rounds_count)
   end
 
+  @spec play_round(game :: module(), user :: String.t(), rounds_count :: integer()) :: :ok
   def play_round(game, user, rounds_count) when rounds_count > 0 do
     game_data = game.generate_game_data()
     task = game.get_task()

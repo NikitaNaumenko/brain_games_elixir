@@ -1,7 +1,7 @@
 defmodule BrainGames.Games.Even do
   require Integer
 
-  @spec generate_game_data() :: Map.t()
+  @spec generate_game_data() :: map()
   def generate_game_data do
     question = Enum.random(0..100)
     answer = if Integer.is_even(question), do: "yes", else: "no"
