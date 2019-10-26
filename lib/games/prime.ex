@@ -1,10 +1,17 @@
 defmodule BrainGames.Games.Prime do
-  @counter 2
+  @moduledoc"""
+  "Is Prime Number?"
+  We show the player the number. The player must determine if this is a prime number.
+  """
+
   require Integer
+
+  @counter 2
+  @max 100
 
   @spec generate_game_data() :: map()
   def generate_game_data do
-    question = Enum.random(0..100)
+    question = Enum.random(0..@max)
     answer = if is_prime(question, @counter), do: "yes", else: "no"
     %{"question" => question, "answer" => answer}
   end

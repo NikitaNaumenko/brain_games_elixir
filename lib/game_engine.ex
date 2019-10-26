@@ -1,4 +1,7 @@
 defmodule BrainGames.GameEngine do
+  @moduledoc """
+  Main game engine which run, a chosen game
+  """
   alias BrainGames.Games.{Even, Calc, Gcd, Progression, Prime}
 
   @games %{"1" => Even, "2" => Calc, "3" => Gcd, "4" => Progression, "5" => Prime}

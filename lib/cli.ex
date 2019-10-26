@@ -1,4 +1,8 @@
 defmodule BrainGames.CLI do
+  @moduledoc """
+  Main CLI interface
+  """
+
   alias BrainGames.GameEngine
 
   def main(_args) do
