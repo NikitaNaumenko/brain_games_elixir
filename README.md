@@ -5,12 +5,16 @@ Brain games is a simple cli utilite, wich made just for fun.
 
 ## Installation
 
-Just cloning repo and run `./brain_games`
+Just cloning repo and run `./brain_games` or install as escript
 
 ```bash
 git clone git@github.com:NikitaNaumenko/brain_games_elixir.git
 
 ./brain_games
+
+# escript
+mix escript.install github NikitaNaumenko/brain_games_elixir
+~/.mix/escripts/brain_games
 end
 ```
 
